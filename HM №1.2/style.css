@@ -1,0 +1,23 @@
+header, footer, nav, section{
+    border: 1px solid black;
+    font-size: 40px;
+}
+header, footer{
+    width: 800px;
+    height: 200px;
+    margin: 0 auto;
+}
+div{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    text-align: center;
+}
+nav{
+    width: 100px;
+    height: 400px;
+}
+section{
+    width: 700px;
+    height: 400px;
+}

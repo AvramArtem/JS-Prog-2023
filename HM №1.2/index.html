@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <script>
+        var userName = prompt("Введіть ваше імʼя:", "Василій");
+        var userSurname = prompt("Введіть вашу фамілію:", "Пупкін");
+        var userAge = prompt("Введіть ваш вік:", "18");
+        var number_1 = prompt("Введіть перше число:" , "5");
+        var number_2 = prompt("Введіть друге число:" , "10");
+        var number_3 = prompt("Введіть третє число:" , "15");
+        var result = (Number(number_1) + Number(number_2) + Number(number_3))/3;
+        
+        document.write("<div><header>" + userSurname + "</header></div>");
+        document.write("<div><nav>" + userAge + "</nav><section>" + userName + "</section></div>");
+        document.write("<div><footer>" + result + "</footer></div>");
+
+    </script>
+    
+</body>
+</html>
