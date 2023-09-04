@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+    <style>
+        .user{
+            width: 50%;
+            height: auto;
+            margin: 10% auto;
+            padding: 50px 0px;
+            border: 1px solid black;
+            box-shadow: 0px 0px 100px 0px rgba(0,0,0,1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        #user-image{
+            text-align: center;
+        }
+        #user-image img{
+            width: 50%;
+            height: auto;
+        }
+        .user-info{
+            text-align: center;
+        }
+        .user-info p{
+            border: 1px solid black;
+            border-radius: 5px;
+            padding: 5px 20px;
+        }
+        #add_person{
+            text-align: center;
+            margin: 0 auto;
+            font-size: 15px;
+            border-radius: 10px;
+            border: 1px solid black;
+            background: none;
+            transition: all 0.5s;
+        }
+        #add_person:hover{
+            background: black;
+            color: white;
+        }
+    </style>
+
+<body>
+    <div class="user">
+        <span id="user-image">
+            
+        </span>
+        <div class="user-info">
+            <p id="name">Iмʼя</p>
+            <p id="surname">Прізвище</p>
+            <p id="age">Вік</p>
+            <p id="tel">Телефон</p>
+            <p id="mail">Пошта</p>
+        </div>
+        <button type="submit" id="add_person">Додати персонажа</button>
+    </div>
+
+    <script>
+        const addPerson = document.getElementById("add_person").onclick = function(){
+            document.getElementById("add_person").innerHTML= "Переробити персонажа";
+
+            var user_photo = prompt("Введіть посилання на фото вашого профілю:");
+            var image = `<img src="${user_photo}" alt="">`;
+            document.getElementById("user-image").innerHTML= image;
+
+            var user_name = prompt("Введіть ваше імʼя:");
+            document.getElementById("name").innerHTML = user_name;
+
+            var user_surname = prompt("Введіть ваше прізвище:");
+            document.getElementById("surname").innerHTML = user_surname;
+
+            var user_age = prompt("Введіть ваш вік:");
+            if(user_age>0 && user_age<=100){
+                document.getElementById("age").innerHTML = user_age;
+            }else{
+                document.getElementById("age").innerHTML = "Введіть коректний вік!";
+            }
+            
+            var user_tel = prompt("Введіть ваш номер телефону у форматі +38...:");
+            if(user_tel.includes("+38") && user_tel.length==13){
+                document.getElementById("tel").innerHTML = user_tel;
+            }else{
+                document.getElementById("tel").innerHTML = "Запишіть номер телефону в форматі +38...!";
+            }
+            
+            var user_mail = prompt("Введіть вашу пошту наприклад у вигляді - galya_1980@gmail.com :");
+            if(user_mail.includes("@")){
+                document.getElementById("mail").innerHTML = user_mail;
+            }else{
+                document.getElementById("mail").innerHTML = "Ваша пошта повинна містити символ - @!";
+            }
+        }
+    </script>
+</body>
+</html>
