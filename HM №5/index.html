@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homework №5</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+</head>
+<body>
+    
+    <!-- Напиши функцію isEmpty(obj), яка повертає true, якщо обʼєкт немає властивостей, інакше false -->
+
+    <!-- <script>
+        function isEmpty(obj){
+            if(obj == undefined){
+                    return "Ви не вказали пустий обʼєкт";
+                }
+            for(var property in obj){
+                if(obj.hasOwnProperty(property)){
+                    return false;
+                }
+            }
+        return true;
+        }
+    </script> -->
+
+    <!-- Створіть обʼєкт cryptoWallet. У гаманці має зберігатись імʼя власника, кілька валют Bitcoin, Ethereum, 
+    Stellar і в кожній валюті додатково є імʼя валюти, логотип, кілька монет та курс на сьогоднішній день день. 
+    Також в обʼєкті гаманець є метод при виклику якого він приймає імʼя валюти та виводить на сторінку інформацію. 
+    "Доброго дня, ...! На вашому балансі (Назва валюти та логотип) залишилося N монет, якщо ви сьогодні продасте їх те, отримаєте ...грн. -->
+    
+
+    <div class="currency-box">
+        <p id="info-currency"></p>
+        <div id="image-currency"></div>
+        <button id="btn-currency">Обрати Криптовалюту</button>
+    </div>
+    <script>
+
+        let cryptoWallet = {
+                userName:"",
+                Bitcoin:{
+                    cryptoName: "Bitcoin",
+                    cryptoImage: "https://s2.coinmarketcap.com/static/img/coins/64x64/1.png",
+                    cryptoBalance: Math.floor(Math.random()*3+1),
+                    cryptoExchange: 25742.85
+                },
+                Ethereum:{
+                    cryptoName: "Ethereum",
+                    cryptoImage:"https://s2.coinmarketcap.com/static/img/coins/64x64/1027.png",
+                    cryptoBalance: Math.floor(Math.random()*10+1),
+                    cryptoExchange: 1612.84
+                },
+                Stellar:{
+                    cryptoName: "Stellar",
+                    cryptoImage: "https://s2.coinmarketcap.com/static/img/coins/64x64/512.png",
+                    cryptoBalance: Math.floor(Math.random()*1000+1),
+                    cryptoExchange: 0.1325
+                }
+            }
+
+            const addInfoWallet = document.getElementById("btn-currency").onclick = function (){
+                document.getElementById("btn-currency").innerHTML= "Вибрати іншу валюту";
+
+                let newUser = prompt("Введіть ваше імʼя:");
+                cryptoWallet.userName = newUser;
+                let infoCurrency = prompt("Введіть назву криптовалюти", "Bitcoin/Ethereum/Stellar");
+                if(newUser == "" || infoCurrency == ""){
+                    alert("Заповніть правильно поля");
+                }
+                else if(infoCurrency == "Bitcoin"){
+                    document.getElementById("info-currency").innerHTML = `Доброго дня, ${newUser}! 
+                    На вашому балансі ${cryptoWallet.Bitcoin.cryptoName} залишилося ${cryptoWallet.Bitcoin.cryptoBalance} одиниць валюти, 
+                    якщо сьогодні ви їх продасте, то отримаєте ${(cryptoWallet.Bitcoin.cryptoBalance*cryptoWallet.Bitcoin.cryptoExchange).toFixed(2)} $.`
+
+                    document.getElementById("image-currency").innerHTML = `<img src="${cryptoWallet.Bitcoin.cryptoImage}" alt="">`;
+                }
+                else if(infoCurrency == "Ethereum"){
+                    document.getElementById("info-currency").innerHTML = `Доброго дня, ${newUser}! 
+                    На вашому балансі ${cryptoWallet.Ethereum.cryptoName} залишилося ${cryptoWallet.Ethereum.cryptoBalance} одиниць валюти, 
+                    якщо сьогодні ви їх продасте, то отримаєте ${(cryptoWallet.Ethereum.cryptoBalance*cryptoWallet.Ethereum.cryptoExchange).toFixed(2)} $.`
+                    
+                    document.getElementById("image-currency").innerHTML = `<img src="${cryptoWallet.Ethereum.cryptoImage}" alt="">`;
+                }
+                else if(infoCurrency == "Stellar"){
+                    document.getElementById("info-currency").innerHTML = `Доброго дня, ${newUser}! 
+                    На вашому балансі ${cryptoWallet.Stellar.cryptoName} залишилося ${cryptoWallet.Stellar.cryptoBalance} одиниць валюти, 
+                    якщо сьогодні ви їх продасте, то отримаєте ${(cryptoWallet.Stellar.cryptoBalance*cryptoWallet.Stellar.cryptoExchange).toFixed(2)} $.`
+                    
+                    document.getElementById("image-currency").innerHTML = `<img src="${cryptoWallet.Stellar.cryptoImage}" alt="">`;
+                }
+                else{
+                    alert("Ви не обрали з запропонованого списку валюту!");
+                }
+            }
+
+
+
+    </script>
+    
+</body>
+</body>
+</html>
