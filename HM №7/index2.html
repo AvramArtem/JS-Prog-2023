@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+        #2
+        Реалізуйте клас MyString, який матиме такі методи: 
+        метод reverse(), який параметром приймає рядок, а повертає її в перевернутому вигляді, 
+        метод ucFirst(), який параметром приймає рядок, а повертає цей же рядок, зробивши його першу літеру великою та 
+        метод ucWords, який приймає рядок та робить заголовною першу літеру кожного слова цього рядка.
+        */
+
+        class MyString{
+            constructor(string){
+                this.string = string;
+            }
+
+            reverse(){
+                const splitStr = this.string.split("");
+                const revStr =  splitStr.reverse();
+                const joinStr = revStr.join("");
+                return joinStr;
+            }
+            ucFirst(){
+                return this.string.charAt(0).toUpperCase() + this.string.slice(1);
+            }
+            ucWords(){
+                const words = this.string.split(" ");
+                const wordsUp = words.map(word => word.charAt(0).toUpperCase()+ word.slice(1));
+                const wordsStr = wordsUp.join(" ");
+                return wordsStr;
+            }
+
+        }
+
+        const str1 = new MyString("what is love? Oh baby, don't hurt me, don't hurt me, no more!");
+
+    </script>
+</body>
+</html>

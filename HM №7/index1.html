@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+        #1
+        Створити клас Animal та розширюючі його класи Dog, Cat, Horse.
+
+        Клас Animal містить змінні food, location і методи makeNoise, eat, sleep. Метод makeNoise, наприклад, може виводити на консоль "Така тварина спить".
+
+        Dog, Cat, Horse перевизначають методи makeNoise, eat.
+
+        Додайте змінні до класів Dog, Cat, Horse, що характеризують лише цих тварин.
+
+        Створіть клас Ветеринар, у якому визначте метод void treatAnimal(Animal animal). 
+        
+        Нехай цей метод роздруковує food і location тварини, що прийшла на прийом.
+
+        У методі main створіть масив типу Animal, в який запишіть тварин всіх типів, що є у вас. 
+        
+        У циклі надсилайте їх на прийом до ветеринара.
+        */
+
+        class Animal{
+            constructor(food, location){
+                this.food = food;
+                this.location = location;
+            }
+            makeNoise(){
+                return console.log("Така тварина спить!")
+            }
+            eat(){
+                return console.log(`Тварина їсть ${this.food}`)
+            }
+            sleep(){
+                return console.log("Тварина спить!")
+            }
+        }
+
+        class Dog extends Animal{
+            constructor(species, food, location){
+                super(food, location);
+                this.species = species;
+            }
+            makeNoise(){
+                return console.log("Собака гавкає!");
+            }
+            eat(){
+                return console.log(`Собака їсть ${this.food}!`);
+            }
+        }
+        class Cat extends Animal{
+            constructor(age, food, location){
+                super(food, location);
+                this.age = age;
+            }
+            makeNoise(){
+                return console.log("Кіт мявкає!");
+            }
+            eat(){
+                return console.log(`Кіт їсть ${this.food}!`);
+            }
+        }
+        class Horse extends Animal{
+            constructor(price, food, location){
+                super(food, location);
+                this.price = price;
+            }
+            makeNoise(){
+                return console.log("Кінь ірже!");
+            }
+            eat(){
+                return console.log(`Кінь їсть ${this.food}!`);
+            }
+        }
+
+        class Veterinarian{
+            treatAnimal(Animal){
+                return console.log(`Ця тварина їсть ${Animal.food} та знаходиться в ${Animal.location}!`);
+            }
+        }
+
+        const main = [
+        new Dog ("Лабрадор", "Корм для собак", "Приватний будинок"),
+        new Cat (5, "Корм для котів", "Притулок"),
+        new Horse (2000,"Солома та трава", "Ферма" )
+        ];
+
+        const proVet = new Veterinarian();
+
+        for(const Animal of main){
+            proVet.treatAnimal(Animal);
+            Animal.makeNoise();
+            Animal.eat();
+            Animal.sleep();
+            console.log("<><><><><><><><><><><><>");
+        }
+    </script>
+
+</body>
+</html>
