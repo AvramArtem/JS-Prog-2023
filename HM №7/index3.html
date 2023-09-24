@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Сharacteristics of the car</title>
+</head>
+
+<body>
+    <script>
+
+        /*
+        Створити клас Car , Engine та Driver.
+
+        Клас Driver містить поля - ПІБ, стаж водіння.
+
+        Клас Engine містить поля – потужність, виробник.
+
+        Клас Car містить поля – марка автомобіля, клас автомобіля, вага, водій типу Driver, мотор типу Engine. 
+
+        Методи start(), stop(), turnRight(), turnLeft(), які виводять на друк: "Поїхали", "Зупиняємося", "Поворот праворуч" або "Поворот ліворуч".
+
+        А також метод toString(), який виводить повну інформацію про автомобіль, її водія і двигуна.
+
+        Створити похідний від Car клас - Lorry (вантажівка), що характеризується також вантажопідйомністю кузова.
+
+        Створити похідний від Car клас - SportCar, який також характеризується граничною швидкістю.
+        */
+
+        class Car{
+            constructor(carBrand, carClass, weight, driver, engine){
+                this.carBrand = carBrand;
+                this.carClass = carClass;
+                this.weight = weight;
+                this.driver = driver;
+                this.engine = engine;
+            }
+            start(){
+                return `Поїхали`;
+            }
+            stop(){
+                return `Зупиняємося`;
+            }
+            turnRight(){
+                return `Поворот праворуч`;
+            }
+            turnLeft(){
+                return `Поворот ліворуч`;
+            }
+            toString(){
+                return `Авто: ${this.carBrand}.\n Клас авто: ${this.carClass}.\n Вага авто: ${this.weight}.\n Потужність двигуна: ${this.engine.power}.\n Виробник двигуна: ${this.engine.producer}.\n Стаж водія: ${this.driver.experience}.\n Імʼя водія: ${this.driver.name}.`;
+            }
+        }
+        class Engine{
+            constructor(power, producer){
+                this.power = power;
+                this.producer = producer;
+            }
+        }
+        class Driver{
+            constructor(experience, name){
+                this.experience = experience;
+                this.name = name;
+            }
+        }
+        class Lorry extends Car{
+            constructor(carBrand, carClass, weight, driver, engine, carrying){
+                super(carBrand, carClass, weight, driver, engine);
+                this.carrying = carrying;
+            }
+            toString(){
+                return `Авто: ${this.carBrand}.\n Клас авто: ${this.carClass}.\n Вага авто: ${this.weight}.\n Потужність двигуна: ${this.engine.power}.\n Виробник двигуна: ${this.engine.producer}.\n Стаж водія: ${this.driver.experience}.\n Імʼя водія: ${this.driver.name}.\n Вантажопідйомність: ${this.carrying}.`;
+            }
+        }
+        class SportCar extends Car{
+            constructor(carBrand, carClass, weight, driver, engine, maxSpeed){
+                super(carBrand, carClass, weight, driver, engine);
+                this.maxSpeed = maxSpeed;
+            }
+            toString(){
+                return `Авто: ${this.carBrand}.\n Клас авто: ${this.carClass}.\n Вага авто: ${this.weight}.\n Потужність двигуна: ${this.engine.power}.\n Виробник двигуна: ${this.engine.producer}.\n Стаж водія: ${this.driver.experience}.\n Імʼя водія: ${this.driver.name}.\n Максимальна швидкість: ${this.maxSpeed}.`;
+            }
+        }
+
+        const engine1 = new Engine("235 Horsepower", "Japan");
+        const driver1 = new Driver("10 years", "Ivan");
+        const car1 = new Car("Toyota Land Cruiser 100", "Jeep", "2 260 KG", driver1, engine1);
+
+        const lorryEngine1 = new Engine("770 Horsepower", "Sweden");
+        const lorryDriver1 = new Driver("20 years", "Roman");
+        const lorry1 = new Lorry("Scania R770", "Truck", "7 500 KG", lorryDriver1, lorryEngine1, "30 000 KG");
+
+        const sportEngine1 = new Engine("425 Horsepower", "USA");
+        const sportDriver1 = new Driver("30 years", "Dominic Toretto");
+        const sportCar1 = new SportCar("Dodge Charger 1970", "Muscle car", "1 805 KG", sportDriver1, sportEngine1, "211 KM/H");
+
+        console.log(car1.toString());
+        console.log(lorry1.toString());
+        console.log(sportCar1.toString());
+
+    </script>
+</body>
+</html>
