@@ -50,10 +50,10 @@
         document.body.appendChild(input);
         document.body.appendChild(btn);
 
-        const formatPhoneNumber = /\d\d\d-\d\d\d-\d\d-\d\d/;
+        const formatPhoneNumber = /\d{3}-\d{3}-\d{2}-\d{2}/;
 
         btn.onclick = function (){
-            if(formatPhoneNumber.test(input.value)){
+            if(formatPhoneNumber.test(input.value) && input.value.length === 13){
                 document.body.classList.add("green");
                 document.location = "https://risovach.ru/upload/2013/03/mem/toni-stark_13447470_big_.jpeg";
             }else{
