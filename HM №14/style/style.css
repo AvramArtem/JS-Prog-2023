@@ -1,0 +1,275 @@
+:root{
+    --text-color-green : #87F54E;
+    --text-color-white: #fff
+}
+
+body{
+    background-image: url("../img/sapce.png");
+}
+
+.hide {
+    display: none !important;
+}
+
+ul, li, body {
+    padding: 0;
+    margin: 0;
+}
+
+.preloader{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    gap: 20%;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    background-image: url("../img/space-ship.png");
+    background-size: 100%;
+}
+   
+
+.preloader_ship{
+    transform: scale(1);
+    animation: ship 1s linear 1 forwards;
+}
+
+.flex{
+    display: flex;
+}
+
+.header{
+    justify-content: space-between;
+}
+
+.navigation {
+    align-items: center;
+    width: 30%;
+}
+
+.navigation li {
+    width: 33%;
+}
+.navigation a{
+    color: var(--text-color-green);
+    text-decoration: none;
+    font-size: 2rem;
+    display: block;
+    width: 100%;
+    text-align: center;
+    height: 100%;
+}
+
+.location{
+color: var(--text-color-white);
+align-items: center;
+}
+.location-planet > img{
+    position: relative;
+    left: -15%;
+    animation: rotate 20s linear infinite;
+}
+.location > div:nth-child(1){
+    flex-grow: 1;
+}
+.location > div:nth-child(2){
+    flex-grow: 5;
+}
+
+.planet-information > div {
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+} 
+
+.planet-information > div > div:nth-child(2)::before{
+display: inline-flex;
+content : "*";
+align-items: center;
+justify-content: center;
+margin-right: 1rem;
+}
+.characters{
+    flex-direction: row;
+}
+.btns-data{
+    width: 100%;
+    justify-content: space-evenly;
+    cursor: pointer;
+}
+.btns-data button{
+    background-color: #92fb5e8a;
+    color: black;
+    font-weight: bold;
+    width: 40%;
+    border: none;
+    box-sizing: border-box;
+    padding: 1.5rem 0;
+}
+
+.body{
+    width: 1000px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    gap: 20px 5%
+}
+.card{
+    width: 30%;
+    border-radius: 8px 8px 16px 16px;
+    position: relative;
+    background-color: var(--text-color-green);
+    overflow: hidden;
+}
+.card img:hover{
+    opacity: 0.7;
+    transition: all 0.4s;
+}
+
+.bold{
+    font-weight: bold;
+}
+
+.characters-iformation{
+    color: black;
+    padding: 1rem;
+    padding-bottom: 3rem;
+
+}
+.go, .start{
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    border: 0px;
+    background:rgb(38, 38, 38);
+}
+
+.go{
+    bottom: 110px;
+    right: 10px;
+    border: 3px solid var(--text-color-green);
+    color: var(--text-color-green);
+    font-size: 25px;
+}
+.start{
+   top: 5px;
+   left: 5px;
+   font-size: 50px;
+   color: var(--text-color-white);
+   transition: all 0.4s;
+}
+.start-add{
+    color: var(--text-color-green);
+}
+.start:hover{
+    color: var(--text-color-green);
+}
+
+.div-card-image{
+    position: fixed;
+    background:rgb(38, 38, 38);
+    height: 100vh;
+    padding: 50%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transition: all 0.4s;
+
+}
+.card-image{
+    position: absolute;
+    z-index: 0;
+    transform: scale(2);
+    top: 12%;
+    left: 40%;
+    transition: all 0.4s;
+    border: 3px solid var(--text-color-green);
+}
+
+.card-image:hover{
+    cursor: pointer;
+    opacity: 0.6;
+}
+
+.div-main{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    background:rgb(38, 38, 38);
+    width: 100%;
+}
+.div-white{ 
+    width: 80%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+    padding: 30px;
+    background: white;
+    border-radius: 30px;
+    border: 2px solid black;
+}
+
+.div-white img{
+    height: 100%;
+    border-radius: 30px;
+    border: 2px solid black;
+}
+
+.close-button{
+    position: absolute;
+    top: -30px;
+    right: -30px;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    border: 5px solid var(--text-color-green);
+    background:rgb(38, 38, 38);
+    font-size: 45px;
+    color: var(--text-color-green);
+}
+.div-info-icons{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.div-info{
+    display: flex;
+    flex-direction: column;
+    border: 2px solid black;
+    background: var(--text-color-green);
+    padding: 30px 100px 30px 30px;
+    border-radius: 30px;
+}
+
+.div-icons{
+    background: var(--text-color-green);
+    border-radius: 30px;
+    border: 2px solid black;
+    display: flex;
+    padding: 10px;
+    font-size: 30px;
+    justify-content: space-around;
+}
+
+@keyframes ship {
+    from{
+        transform: scale(1);
+    }
+    to{
+        transform: scale(0);
+    }
+}
+
+@keyframes rotate {
+    from{
+        transform: rotateZ(0deg);
+    }
+    to{
+        transform: rotateZ(360deg);
+    }
+}

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rick And Morty</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="./style/style.css">
+</head>
+
+<body>
+    <header>
+        <div class="header flex">
+            <a href="/" class="logo"><img src="./img/logo-rickandmorty.svg" alt=""></a>
+            <ul class="navigation flex">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Favorites</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+    <main>
+        <div class="location flex">
+            <div class="location-planet">
+                <img src="./img/planet.png" alt="planet">
+            </div>
+            <div class="planet-information">
+                <div id="name">
+                    <div class="title">Name:</div>
+                    <div class="data"></div>
+                </div>
+                <div id="type">
+                    <div class="title">Type:</div>
+                    <div class="data"></div>
+                </div>
+                <div id="dimension">
+                    <div class="title">Dimension:</div>
+                    <div class="data"></div>
+                </div>
+                <div id="created">
+                    <div class="title">Created:</div>
+                    <div class="data"></div>
+                </div>
+            </div>
+        </div>
+        <div class="characters">
+            <div class="body flex"></div>
+            <div class="btns-data flex">
+                <button id="next" type="button">Наступні</button>
+                <button id="prev" type="button">Попередні</button>
+            </div>
+        </div>
+    </main>
+    <div class="preloader">
+        <div class="preloader-title animate__animated animate__hinge">
+            <img src="./img/logo-rickandmorty.svg" alt="rick and morty">
+        </div>
+        <div class="preloader_ship">
+            <img src="./img/ship.png" alt="">
+        </div>
+    </div>
+    <script src="./code/index.js"></script>
+</body>
+
+</html>
