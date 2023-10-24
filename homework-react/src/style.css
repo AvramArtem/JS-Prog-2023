@@ -1,0 +1,87 @@
+body{
+    margin: 0;
+}
+#root{
+    width: 60%;
+    border: 1px solid black;
+    margin: 10px auto;
+}
+.heading{
+    color: black;
+    font-weight: 1000;
+    font-size: 50px;
+    text-align: center;
+    padding: 30px 0px;
+}
+
+.sign-up{
+    color: rgb(173, 173, 45);
+    font-size: 30px;
+    text-align: center;
+    background: rgb(19, 19, 63);
+    padding: 20px 0px;
+}
+
+.refreshing{
+    text-align: center;
+}
+
+.refreshing h1{
+    color: rgb(33, 33, 162);
+    margin: 30px 0px 100px 0px;
+}
+
+.refreshing p{
+    color: gray;
+    font-size: 20px;
+    margin-bottom: 50px;
+}
+
+.refreshing button{
+    background-color: rgb(217, 170, 0);
+    border: none;
+    border-radius: 10px;
+    padding: 20px 40px;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.menu-sunday{
+    display: flex;
+    padding: 20px;
+    justify-content: space-around;
+}
+
+.block{
+    width: 40%;
+}
+.menu-sunday h1{
+    color: rgb(46, 46, 165);
+    font-size: 25px;
+}
+
+.menu-sunday button{
+    background-color: rgb(37, 32, 132);
+    color:  rgb(87, 81, 208);
+    border: none;
+    border-radius: 10px;
+    padding: 20px 40px;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.footer{
+    margin-top: 300px;
+    text-align: center;
+    background: rgb(105, 68, 39);
+    padding: 10px 0px;
+}
+
+.footer h1{
+    color:rgb(206, 156, 118);
+    font-size: 25px;
+}
+
+.footer p{
+    color: white;
+}
